@@ -2,6 +2,6 @@
 - Framework: Spring Boot
 - Language: Java
 
-# How to install
+## How to install
 - Clone Repository
 - Jalankan "mvn spring-boot:run" pada direktori yang mengandung pom.xml
