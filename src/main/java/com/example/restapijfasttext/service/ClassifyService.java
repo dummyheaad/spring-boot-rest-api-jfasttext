@@ -1,5 +1,6 @@
 package com.example.restapijfasttext.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.restapijfasttext.model.Classify;
@@ -7,12 +8,14 @@ import com.github.jfasttext.JFastText;
 
 @Service
 public class ClassifyService {
-    static Classify classify = new Classify();
-    static JFastText jft = new JFastText();
+
+    private final Classify classify;
+    private final JFastText jft;
 
     // load model
-    public ClassifyService() {
-        jft.loadModel("./src/test/resources/models/model_cooking.bin");
+    public ClassifyService(@Autowired Classify classify, @Autowired JFastText jft) {
+        this.classify = classify;
+        this.jft = jft;
     }
 
     // predict and return label text
@@ -20,5 +23,9 @@ public class ClassifyService {
         JFastText.ProbLabel probLabel = jft.predictProba(text);
         classify.setAll(text, probLabel.label, Math.exp(probLabel.logProb));
         return classify;
+    }
+
+    public void init() {
+        this.jft.loadModel("./src/test/resources/models/model_cooking.bin");
     }
 }
