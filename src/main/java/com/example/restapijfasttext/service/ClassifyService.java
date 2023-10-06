@@ -25,6 +25,7 @@ public class ClassifyService {
         return classify;
     }
 
+    // load model
     public void init() {
         this.jft.loadModel("./src/test/resources/models/model_cooking.bin");
     }

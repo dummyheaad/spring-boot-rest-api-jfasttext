@@ -3,5 +3,5 @@
 - Language: Java
 
 ## How to install
-- Clone Repository
-- Jalankan "mvn spring-boot:run" pada direktori yang mengandung berkas pom.xml
+- Clone repository
+- Jalankan "./mvnw spring-boot:run" pada direktori yang mengandung berkas pom.xml
