@@ -1,5 +1,5 @@
 # Mengatur nama workflow menjadi "Continuous Integration"
-name: Continuous Integrationi
+name: Continuous Integration
 
 # Mengatur trigger
 on:
@@ -25,5 +25,4 @@ jobs:
 
       - name: Build and Run Project with Maven
         run: |
-          mvn spring-boot:run
-        
+          mvn --batch-mode --update-snapshot verify
