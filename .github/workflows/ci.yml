@@ -25,4 +25,4 @@ jobs:
 
       - name: Build and Run Project with Maven
         run: |
-          mvn --batch-mode --update-snapshot verify
+          mvn --batch-mode --update-snapshots verify
