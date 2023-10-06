@@ -8,6 +8,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
+import java.io.IOException;
+
 @Configuration
 @ComponentScan
 @Slf4j
@@ -18,8 +20,7 @@ public class FastTextConfiguration {
         try {
             log.info("Fast Text model successfully loaded");
 
-            Resource modelResource = new ClassPathResource("models/model_cooking.bin");
-            String modelPath = modelResource.getFile().getAbsolutePath();
+            String modelPath = "./src/test/resources/models/model_cooking.bin";
 
             JFastText jFastText = new JFastText();
             jFastText.loadModel(modelPath);
