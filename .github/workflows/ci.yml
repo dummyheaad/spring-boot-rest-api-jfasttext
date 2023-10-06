@@ -1,0 +1,33 @@
+# Mengatur nama workflow menjadi "Continuous Integration"
+name: Continuous Integration
+
+# Mengatur trigger
+on:
+  pull_request:
+    branches:
+      - master
+
+# Mendefinisikan jobs
+jobs:
+  # Build dan Execute project
+  build-and-execute-app:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Install JDK Eclipse Temurin
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      
+      - name: Install Maven
+        uses: stCarolas/setup-maven@4.5
+        with:
+          maven-version: 3.8.2
+
+      - name: Build and Execute Project
+        run: |
+          ./mvnw spring-boot:run
+        
