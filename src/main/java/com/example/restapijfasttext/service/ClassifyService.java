@@ -38,6 +38,7 @@ public class ClassifyService {
     public Classify predictLabel(String text) {
         JFastText jFastText = context.getBean(JFastText.class);
         JFastText.ProbLabel label = jFastText.predictProba(text);
+
         classify.setAll(text, label.label, Math.exp(label.logProb));
         return classify;
     }
