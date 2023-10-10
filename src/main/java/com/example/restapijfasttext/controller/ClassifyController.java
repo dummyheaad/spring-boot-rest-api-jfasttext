@@ -11,8 +11,12 @@ import com.example.restapijfasttext.service.ClassifyService;
 @RestController
 @RequestMapping("/api")
 public class ClassifyController {
-    @Autowired
-    private ClassifyService classifyService;
+
+    private final ClassifyService classifyService;
+
+    ClassifyController(@Autowired ClassifyService classifyService) {
+        this.classifyService = classifyService;
+    }
 
     @GetMapping
     public HttpStatus testConnection() {
