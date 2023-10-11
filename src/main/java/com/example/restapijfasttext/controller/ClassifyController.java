@@ -15,11 +15,13 @@ public class ClassifyController {
     private final ClassifyService classifyService;
 
     ClassifyController(@Autowired ClassifyService classifyService) {
+
         this.classifyService = classifyService;
     }
 
     @GetMapping
     public HttpStatus testConnection() {
+
         return HttpStatus.OK;
     }
 
