@@ -23,6 +23,6 @@ jobs:
           java-version: '17'
           cache: 'maven'
 
-      - name: Build and Run Project with Maven
+      - name: Build and Test Project with Maven
         run: |
-          mvn --batch-mode --update-snapshots verify
+          mvn clean package
