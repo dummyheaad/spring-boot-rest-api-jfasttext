@@ -16,7 +16,7 @@ public class FastTextConfiguration {
         try {
             log.info("Fast Text model successfully loaded");
 
-            String modelPath = "./src/test/resources/models/model_cooking.bin";
+            String modelPath = "./src/test/resources/models/model_chat.bin";
 
             JFastText jFastText = new JFastText();
             jFastText.loadModel(modelPath);
