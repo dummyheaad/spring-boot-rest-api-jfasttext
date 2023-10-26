@@ -19,8 +19,8 @@ public class ClassifyController {
     }
 
     @GetMapping
-    public HttpStatus testConnection() {
-        return HttpStatus.OK;
+    public String testConnection() {
+        return "Welcome to Tetanggaku NLP Chat Service!";
     }
 
     @PostMapping("/predict")
