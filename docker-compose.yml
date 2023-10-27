@@ -1,0 +1,8 @@
+version: '3'
+services:
+  nlp_chat_service:
+    build: .
+    command: ["java", "-jar", "./target/restapijfasttext-0.0.1-SNAPSHOT.jar"]
+    ports:
+      - 8080:8080
+    restart: always
