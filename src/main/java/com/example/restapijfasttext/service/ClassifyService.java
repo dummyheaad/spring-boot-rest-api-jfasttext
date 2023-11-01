@@ -13,13 +13,6 @@ public class ClassifyService {
     @Autowired
     private JFastText jFastText;
 
-//    public Classify predictLabel(String text) {
-//        JFastText.ProbLabel jftLabel = jFastText.predictProba(text);
-
-//
-//        return new Classify(text, label, Math.exp(jftLabel.logProb));
-//    }
-
     public Classify predictLabel(String text) {
         JFastText.ProbLabel jftLabel = jFastText.predictProba(text);
         Classify classify;
